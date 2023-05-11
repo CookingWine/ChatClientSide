@@ -17,26 +17,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Resource/cnmtlbg.jpg"/>
         </Grid.Background>
-        <TextBlock FontSize="15"
-                   Foreground="Red"
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"
-                   Block.TextAlignment="Left"
-                   Margin="-200,0,0,0" 
-                   >
-            账号
-        </TextBlock>
-        <TextBox PreviewTextInput="TextBoxPreviewTextInput"
-                 InputMethod.IsInputMethodEnabled="False"
-                 Name="UserInputText"
-                 HorizontalAlignment="Center" 
-                 VerticalAlignment="Center"
-                 Block.TextAlignment="Left"
-                 Padding="0,7,0,0"
-                 Height="30"
-                 Width="150"
-                 Margin="0,0,0,0"
-                 />
+
         <TextBlock FontSize="15"
                    Foreground="Red"
                    HorizontalAlignment="Center" 
@@ -44,7 +25,7 @@
                    Block.TextAlignment="Center"
                    Margin="-200,100,0,0" 
                    >
-            密码
+           用户名
         </TextBlock>
         <TextBox HorizontalAlignment="Center" 
                  VerticalAlignment="Center"

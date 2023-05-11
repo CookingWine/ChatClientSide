@@ -5,8 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatClientSide.ClientView"
         mc:Ignorable="d"
-        Title="MainClient" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainClient"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Height="600" Width="1080"
+        MaxWidth="1080" MaxHeight="600"
+        MinWidth="1080" MinHeight="600"
+        ResizeMode="NoResize"
+        >
+    <Grid Name="MainClientWindow" Height="600" Width="1080" Background="Transparent">
+        <Border Background="Transparent">
+            <Border CornerRadius="10 10 10 10" Background="WhiteSmoke">
+                <Grid>
+
+                </Grid>
+            </Border>
+        </Border>
     </Grid>
+    <!--<Grid>
+        -->
+    <!--界面划分-->
+    <!--
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="270"/>
+        </Grid.ColumnDefinitions>
+        -->
+    <!--联系人界面-->
+    <!--
+        <StackPanel Grid.Column="0" Background="Green">
+            <StackPanel Orientation="Horizontal" Background="White">
+                <Image Width="270" Height="70" Source="/Resource/01.png"/>
+            </StackPanel>
+        </StackPanel>
+        -->
+    <!--发送消息界面-->
+    <!--
+        <StackPanel Grid.Column="1">
+            <Image Width="540" Height="600" Source="/Resource/MainBg.png" />
+            <Button Margin="0,-100,0,0"
+                    Content="发送"
+                    Name="SendMessageButton"
+                    Width="100" Height="30" HorizontalAlignment="Right"
+                />
+        </StackPanel>
+        -->
+    <!--Music界面-->
+    <!--
+        <StackPanel Grid.Column="2" Background="AliceBlue">
+
+        </StackPanel>
+    </Grid>-->
 </Window>

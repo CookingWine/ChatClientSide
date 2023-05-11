@@ -6,6 +6,9 @@ namespace ChatClientSide
 {
     public class TextBoxAtachedProperties
     {
+
+        public static string Name = string.Empty;
+
         public static bool GetIsOnlyNumber( DependencyObject obj )
         {
             return (bool)obj.GetValue( IsOnlyNumberProperty );

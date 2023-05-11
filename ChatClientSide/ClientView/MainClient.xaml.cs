@@ -24,7 +24,16 @@ namespace ChatClientSide.ClientView
         public MainClient( string userName )
         {
             InitializeComponent( );
+            MouseMove += new MouseEventHandler( WindowMouseMoveEvent );
             UserClient ??= new Client( userName );
+        }
+
+        private void WindowMouseMoveEvent( object sender , MouseEventArgs e )
+        {
+            if( e.LeftButton == MouseButtonState.Pressed )
+            {
+                DragMove( );
+            }
         }
     }
 }

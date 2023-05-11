@@ -39,11 +39,5 @@ namespace ChatClientSide
             Close( );
             mainClient.Show( );
         }
-
-        private void TextBoxPreviewTextInput( object sender , TextCompositionEventArgs e )
-        {
-            Regex re = new Regex( "[^0-9]" );
-            e.Handled = re.IsMatch( e.Text );
-        }
     }
 }
