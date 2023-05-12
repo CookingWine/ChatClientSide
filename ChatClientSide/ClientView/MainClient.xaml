@@ -13,50 +13,47 @@
         Height="600" Width="1080"
         MaxWidth="1080" MaxHeight="600"
         MinWidth="1080" MinHeight="600"
-        ResizeMode="NoResize"
         >
-    <Grid Name="MainClientWindow" Height="600" Width="1080" Background="Transparent">
-        <Border Background="Transparent">
-            <Border CornerRadius="10 10 10 10" Background="WhiteSmoke">
-                <Grid>
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                </Grid>
+            <Border CornerRadius="25 0 0 25" Width="220">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#343155" Offset="0" />
+                        <GradientStop Color="#3B2E58" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
             </Border>
-        </Border>
-    </Grid>
-    <!--<Grid>
-        -->
-    <!--界面划分-->
-    <!--
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="270"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="270"/>
-        </Grid.ColumnDefinitions>
-        -->
-    <!--联系人界面-->
-    <!--
-        <StackPanel Grid.Column="0" Background="Green">
-            <StackPanel Orientation="Horizontal" Background="White">
-                <Image Width="270" Height="70" Source="/Resource/01.png"/>
-            </StackPanel>
-        </StackPanel>
-        -->
-    <!--发送消息界面-->
-    <!--
-        <StackPanel Grid.Column="1">
-            <Image Width="540" Height="600" Source="/Resource/MainBg.png" />
-            <Button Margin="0,-100,0,0"
-                    Content="发送"
-                    Name="SendMessageButton"
-                    Width="100" Height="30" HorizontalAlignment="Right"
-                />
-        </StackPanel>
-        -->
-    <!--Music界面-->
-    <!--
-        <StackPanel Grid.Column="2" Background="AliceBlue">
 
-        </StackPanel>
-    </Grid>-->
+            <Border CornerRadius="0 25 25 0" MouseDown="Border_MouseDown" Grid.Column="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#3E3A65" Offset="0" />
+                        <GradientStop Color="#473765" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <!--Transaction Panel-->
+        <Grid Grid.Column="1">
+            <!--Transfer Panel-->
+            <Border  Margin="222,10,20,20">
+
+            </Border>
+
+
+        </Grid>
+    </Grid>
 </Window>
