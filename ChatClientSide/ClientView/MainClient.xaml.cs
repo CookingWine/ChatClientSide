@@ -24,6 +24,7 @@ namespace ChatClientSide.ClientView
         public MainClient( string userName )
         {
             InitializeComponent( );
+            UserName.Text = userName;
             UserClient ??= new Client( userName );
         }
 
@@ -33,6 +34,11 @@ namespace ChatClientSide.ClientView
             {
                 DragMove( );
             }
+        }
+
+        private void CloseAppEvent(object sender, RoutedEventArgs e )
+        {
+            Application.Current.Shutdown( );
         }
     }
 }

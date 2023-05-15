@@ -10,9 +10,15 @@
     <Compile Update="ClientView\MainClient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ClientView\WalletPaymentRes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ClientView\MainClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ClientView\WalletPaymentRes.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ChatClientSide.ClientView"
+        xmlns:local="clr-namespace:ChatClientSide.ClientView" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainClient"
         Background="Transparent"
@@ -14,13 +15,20 @@
         MaxWidth="1080" MaxHeight="600"
         MinWidth="1080" MinHeight="600"
         >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ChatClientSide;component/ClientView/WalletPaymentRes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-
+            <!--Left Panel-->
             <Border CornerRadius="25 0 0 25" Width="220">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -29,7 +37,7 @@
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
-
+            <!--Right Panel-->
             <Border CornerRadius="0 25 25 0" MouseDown="Border_MouseDown" Grid.Column="1">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -39,20 +47,48 @@
                 </Border.Background>
             </Border>
         </Grid>
+        <!--Grid Controls-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-        </Grid>
-        <!--Transaction Panel-->
-        <Grid Grid.Column="1">
-            <!--Transfer Panel-->
-            <Border  Margin="222,10,20,20">
 
-            </Border>
+            <!--Main Menu-->
+            <StackPanel Width="240">
+                <!--UserName-->
+                <StackPanel Orientation="Horizontal" Margin="0 50 20 40" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="AccountBadge" Foreground="White" Width="35" Height="35" />
+                    <TextBlock x:Name="UserName" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Margin="10 0 0 0" Foreground="#FFFFFF" Text="用户名" />
+                </StackPanel >
+                <Separator Background="#e0e0e0" Opacity="0.5" Margin="50 15 60 15" />
+                <StackPanel Orientation="Horizontal" Margin="0 350 20 40" HorizontalAlignment="Center">
+                    <Button x:Name="CloseAppButton"  Style="{StaticResource menuButton}" Click="CloseAppEvent">
+                        <Grid >
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="AppleKeyboardCommand" Style="{StaticResource buttonIcon}" />
+                                <TextBlock Text="退出" Style="{StaticResource buttonText}" />
+                            </StackPanel>
+                            <materialDesign:PackIcon Kind="ChevronRight" Style="{StaticResource buttonIconExpand}" />
+                        </Grid>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
 
+            <!--Transaction Panel-->
+            <Grid Grid.Column="1">
+            </Grid>
+
+            <!--Info Panel-->
+            <StackPanel Grid.Column="2" Margin="0 0 20 0">
+
+                <!--Top Menu-->
+                <StackPanel Orientation="Horizontal" Margin="20 40 20 0" HorizontalAlignment="Right">
+
+                </StackPanel>
+
+            </StackPanel>
 
         </Grid>
     </Grid>
