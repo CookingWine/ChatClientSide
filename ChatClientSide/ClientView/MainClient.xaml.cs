@@ -35,7 +35,7 @@ namespace ChatClientSide.ClientView
                 DragMove( );
             }
         }
-
+        ///<summary>关闭应用</summary>
         private void CloseAppEvent(object sender, RoutedEventArgs e )
         {
             Application.Current.Shutdown( );

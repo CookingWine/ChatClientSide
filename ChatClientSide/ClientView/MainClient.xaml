@@ -47,7 +47,7 @@
                 </Border.Background>
             </Border>
         </Grid>
-        <!--Grid Controls-->
+        <!--整体界面-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
@@ -55,7 +55,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!--Main Menu-->
+            <!--用户-->
             <StackPanel Width="240">
                 <!--UserName-->
                 <StackPanel Orientation="Horizontal" Margin="0 50 20 40" HorizontalAlignment="Center">
@@ -78,6 +78,7 @@
 
             <!--Transaction Panel-->
             <Grid Grid.Column="1">
+                
             </Grid>
 
             <!--Info Panel-->
