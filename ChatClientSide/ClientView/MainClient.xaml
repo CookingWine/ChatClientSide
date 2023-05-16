@@ -63,11 +63,12 @@
                     <TextBlock x:Name="UserName" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Margin="10 0 0 0" Foreground="#FFFFFF" Text="用户名" />
                 </StackPanel >
                 <Separator Background="#e0e0e0" Opacity="0.5" Margin="50 15 60 15" />
-                <StackPanel  Margin="0 30 20 40" Height="100">
+                <StackPanel  Margin="0 30 20 40" Height="162">
+                    <TextBlock x:Name="OnLineUserCount" Style="{StaticResource textLabel}" Text="当前在线数量：10" Width="159"/>
                     <Button x:Name="Minimize"  Style="{StaticResource menuButton}" Click="MinimizeWindow">
                         <Grid >
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <materialDesign:PackIcon Kind="AppleKeyboardCommand" Style="{StaticResource buttonIcon}" />
+                                <materialDesign:PackIcon Kind="Minus" Style="{StaticResource buttonIcon}" />
                                 <TextBlock Text="最小化" Style="{StaticResource buttonText}" />
                             </StackPanel>
                             <materialDesign:PackIcon Kind="ChevronRight" Style="{StaticResource buttonIconExpand}" />

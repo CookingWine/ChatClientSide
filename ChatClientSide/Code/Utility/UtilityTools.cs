@@ -1,4 +1,7 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
+using System.Diagnostics;
+using System.Text.Json;
 
 namespace ChatClientSide.Code.Utility
 {
@@ -14,5 +17,54 @@ namespace ChatClientSide.Code.Utility
             return int.Parse( GetAppSetting( key ) );
 
         }
+
+        public static void WriteLine( string message )
+        {
+            Trace.WriteLine( message );
+        }
+
+        /// <summary>
+        /// 发送信息
+        /// </summary>
+        /// <param name="message">消息</param>
+        /// <param name="code">状态码</param>
+        /// <returns></returns>
+        public static string SendMessage( string name , string message , int code )
+        {
+            var ChatInfo = new ChatInformation( )
+            {
+                UserName = name ,
+                CreationTime = DateTime.Now.ToString( ) ,
+                Message = message ,
+                Code = code
+            };
+            return JsonSerializer.Serialize( ChatInfo );
+        }
+
+        /// <summary>
+        /// 获取消息
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public static ChatInformation? GetChatInformation( string message )
+        {
+            return JsonSerializer.Deserialize<ChatInformation>( message );
+        }
+
+    }
+
+    public class ChatInformation
+    {
+        ///<summary>发送用户</summary>
+        public string? UserName { get; set; }
+
+        ///<summary>创建时间</summary>
+        public string? CreationTime { get; set; }
+
+        ///<summary>消息</summary>
+        public string? Message { get; set; }
+
+        ///<summary>状态码</summary>
+        public int Code { get; set; }
     }
 }

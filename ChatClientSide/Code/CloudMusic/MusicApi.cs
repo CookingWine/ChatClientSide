@@ -4,14 +4,17 @@ namespace ChatClientSide.Code.CloudMusic
 {
     public class MusicApi
     {
-        public static MusicApi? Instance { get; private set; }
-
         public string? RequestUrl { get; private set; }
 
         public MusicApi( )
         {
-            Instance = this;
-            RequestUrl = UtilityTools.GetAppSetting( "MusicUrl" );
+            RequestUrl = UtilityTools.GetAppSetting( "ServerAddress" );
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage( "Performance" , "CA1822:Mark members as static" , Justification = "<挂起>" )]
+        public void Shutdown( )
+        {
+            UtilityTools.WriteLine( "退出" );
         }
     }
 }
