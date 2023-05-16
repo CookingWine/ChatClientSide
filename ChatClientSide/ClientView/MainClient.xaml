@@ -63,7 +63,16 @@
                     <TextBlock x:Name="UserName" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Margin="10 0 0 0" Foreground="#FFFFFF" Text="用户名" />
                 </StackPanel >
                 <Separator Background="#e0e0e0" Opacity="0.5" Margin="50 15 60 15" />
-                <StackPanel Orientation="Horizontal" Margin="0 350 20 40" HorizontalAlignment="Center">
+                <StackPanel  Margin="0 30 20 40" Height="100">
+                    <Button x:Name="Minimize"  Style="{StaticResource menuButton}" Click="MinimizeWindow">
+                        <Grid >
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="AppleKeyboardCommand" Style="{StaticResource buttonIcon}" />
+                                <TextBlock Text="最小化" Style="{StaticResource buttonText}" />
+                            </StackPanel>
+                            <materialDesign:PackIcon Kind="ChevronRight" Style="{StaticResource buttonIconExpand}" />
+                        </Grid>
+                    </Button>
                     <Button x:Name="CloseAppButton"  Style="{StaticResource menuButton}" Click="CloseAppEvent">
                         <Grid >
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
@@ -76,21 +85,41 @@
                 </StackPanel>
             </StackPanel>
 
-            <!--Transaction Panel-->
+            <!--中心面板-->
             <Grid Grid.Column="1">
-                
+                <!--信息面板-->
+                <Border Style="{StaticResource border}" Height="580" VerticalAlignment="Bottom" Margin="0,0,0,10">
+
+                </Border>
             </Grid>
 
-            <!--Info Panel-->
+            <!--Music面板-->
             <StackPanel Grid.Column="2" Margin="0 0 20 0">
+                <Border Style="{StaticResource border}" Height="580" Margin="10 10 0 10">
+                    <StackPanel Margin="10 10 10 20">
+                        <!--标题-->
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <materialDesign:PackIcon Kind="MusicCircle" Foreground="White" Width="40" Height="40" />
+                            <TextBlock Text="Music" Foreground="#fcfcfc" TextAlignment="Center" FontSize="34"
+                                   FontWeight="SemiBold" />
+                        </StackPanel>
+                        <!--<Separator Background="#e0e0e0" Opacity="0.5" Margin="10 10 10 0" />-->
+                        <!--搜索歌曲按钮-->
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" Width="335">
+                            <TextBox x:Name="SearchMusicName" Margin="0 10 0 5" Text="" TextAlignment="Center" Width="260" VerticalAlignment="Center" />
+                            <Button x:Name="SearchMusicButton" Style="{StaticResource button}" Click="SearchMusic" Width="55" Height="55" Margin="15,0,0,0">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <materialDesign:PackIcon Kind="Magnify" Foreground="White"  Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
 
-                <!--Top Menu-->
-                <StackPanel Orientation="Horizontal" Margin="20 40 20 0" HorizontalAlignment="Right">
 
-                </StackPanel>
+
+                    </StackPanel>
+                </Border>
 
             </StackPanel>
-
         </Grid>
     </Grid>
 </Window>
