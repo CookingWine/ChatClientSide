@@ -1,19 +1,6 @@
 ﻿using ChatClientSide.ClientView;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ChatClientSide
 {
@@ -26,18 +13,30 @@ namespace ChatClientSide
         {
             InitializeComponent( );
         }
-
-        public void UserLogic( object sender , RoutedEventArgs e )
+        ///<summary>拖拽窗口</summary>
+        private void Border_MouseDown( object sender , MouseButtonEventArgs e )
         {
-            if( string.IsNullOrEmpty( UserNameText.Text ) )
+            if( e.ChangedButton == MouseButton.Left )
+            {
+                DragMove( );
+            }
+        }
+        private void UserLogic( object sender , RoutedEventArgs e )
+        {
+            if( string.IsNullOrEmpty( UserName.Text ) )
             {
                 MessageBox.Show( "用户名为空" , "请输入用户名" , MessageBoxButton.OKCancel , MessageBoxImage.Question );
                 return;
             }
-            MainClient mainClient = new MainClient( UserNameText.Text );
+            MainClient mainClient = new MainClient( UserName.Text );
             Application.Current.MainWindow = mainClient;
             Close( );
             mainClient.Show( );
+        }
+
+        private void ShutdownApp( object sender , RoutedEventArgs e )
+        {
+            Application.Current.Shutdown( );
         }
     }
 }
