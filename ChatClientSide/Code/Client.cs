@@ -42,6 +42,7 @@ namespace ChatClientSide.Code
         {
             View = view;
             UserID = UtilityTools.GuidToLongID( );
+            m_IsConnectServer = true;
             UpdateUserName( username );
             StartConnectServer( );
         }

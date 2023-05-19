@@ -61,6 +61,7 @@ namespace ChatClientSide.ClientView
             {
                 return;
             }
+            CloudMusic.SeachSong(SearchMusicName.Text);
         }
         #endregion
     }
