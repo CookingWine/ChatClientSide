@@ -27,7 +27,7 @@ namespace ChatClientSide.Code
         private BinaryReader? m_BinaryReader;
         private BinaryWriter? m_BinaryWriter;
         ///<summary>用户ID</summary>
-        internal int UserID { get; private set; }
+        internal long UserID { get; }
 
         ///<summary>用户名</summary>
         public string? UserName { get; private set; }
@@ -41,6 +41,7 @@ namespace ChatClientSide.Code
         internal Client( string username , MainClient view )
         {
             View = view;
+            UserID = UtilityTools.GuidToLongID( );
             UpdateUserName( username );
             StartConnectServer( );
         }
@@ -133,7 +134,7 @@ namespace ChatClientSide.Code
         /// <param name="code">状态码</param>
         private void SendMessages( string message , EMessageCode code )
         {
-            string info = UtilityTools.SendMessage( UserName , message , (int)code );
+            string info = UtilityTools.SendMessage( UserID , UserName , message , (int)code );
             try
             {
                 if( m_BinaryWriter != null )

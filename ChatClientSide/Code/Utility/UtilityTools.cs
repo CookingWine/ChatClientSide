@@ -40,10 +40,11 @@ namespace ChatClientSide.Code.Utility
         /// <param name="message">消息</param>
         /// <param name="code">状态码</param>
         /// <returns></returns>
-        public static string SendMessage( string name , string message , int code )
+        public static string SendMessage( long id , string name , string message , int code )
         {
             var ChatInfo = new ChatInformation( )
             {
+                UserID = id ,
                 UserName = name ,
                 CreationTime = DateTime.Now.ToString( ) ,
                 Message = message ,
@@ -62,10 +63,23 @@ namespace ChatClientSide.Code.Utility
             return JsonSerializer.Deserialize<ChatInformation>( message );
         }
 
+        /// <summary>
+        /// 根据GUID获取19位的唯一数字序列
+        /// </summary>
+        /// <returns></returns>
+        public static long GuidToLongID( )
+        {
+            byte[] buffer = Guid.NewGuid( ).ToByteArray( );
+            return BitConverter.ToInt64( buffer , 0 );
+        }
+
     }
 
     public class ChatInformation
     {
+        ///<summary>用户唯一ID</summary>
+        public long? UserID { get; set; }
+
         ///<summary>发送用户</summary>
         public string? UserName { get; set; }
 
